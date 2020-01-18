@@ -9,7 +9,7 @@ export class Main {
     }
 
     public run(): void {
-        requestAnimationFrame(() => this.gameLoopService.draw());
+        this.gameLoopService.initLoop();
 
         console.log("Hello Team!");
     }
