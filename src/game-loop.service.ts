@@ -4,6 +4,11 @@ import { CanvasService } from "./canvas.service";
 @injectable()
 export class GameLoopService {
 
+    /**
+     * GameLoopService Constructor
+     *
+     * @param canvas
+     */
     constructor(private readonly canvas: CanvasService){
     }
 
