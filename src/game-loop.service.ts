@@ -5,6 +5,9 @@ export class GameLoopService {
     private canvas: HTMLCanvasElement | null = null;
     private context: CanvasRenderingContext2D | null = null;
 
+    /**
+     * initializes variables and starts game loop
+     */
     public initLoop(): void {
             this.canvas = document.querySelector('canvas');
             if (this.canvas) {
@@ -13,7 +16,10 @@ export class GameLoopService {
                 requestAnimationFrame(this.draw.bind(this));
             }
         }
-        
+
+    /**
+     * part of the game loop, draws frames
+     */
     private draw(): void {
         if(this.canvas && this.context){
             // Clear the Canvas
