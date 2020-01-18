@@ -1,5 +1,6 @@
 // Ignores dependencies
 node_modules
+dist
 
 // Ignores compiled files
 *.js
