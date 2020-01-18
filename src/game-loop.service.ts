@@ -9,13 +9,14 @@ export class GameLoopService {
      * initializes variables and starts game loop
      */
     public initLoop(): void {
-            this.canvas = document.querySelector('canvas');
-            if (this.canvas) {
-                this.context = this.canvas.getContext('2d');
+        this.canvas = document.querySelector('canvas');
 
-                requestAnimationFrame(this.draw.bind(this));
-            }
+        if (this.canvas) {
+            this.context = this.canvas.getContext('2d');
+
+            requestAnimationFrame(this.draw.bind(this));
         }
+    }
 
     /**
      * part of the game loop, draws frames
