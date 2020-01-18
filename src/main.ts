@@ -6,10 +6,21 @@ import { CanvasService } from './canvas.service';
 @singleton()
 export class Main {
 
-    constructor(private readonly gameLoopService: GameLoopService,
-                private readonly canvas: CanvasService) {
+    /**
+     * Main Constructor
+     *
+     * @param gameLoopService
+     * @param canvas
+     */
+    constructor(
+        private readonly gameLoopService: GameLoopService,
+        private readonly canvas: CanvasService
+    ) {
     }
 
+    /**
+     * this function starts the game instance
+     */
     public run(): void {
         this.canvas.initCanvas();
         this.gameLoopService.initLoop();

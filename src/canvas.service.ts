@@ -6,6 +6,9 @@ let _context!: CanvasRenderingContext2D;
 @injectable()
 export class CanvasService {
 
+    /**
+     * CanvasService Constructor
+     */
     constructor() {
     }
 
