@@ -43,8 +43,8 @@ export class CanvasService {
         _canvas = document.createElement('canvas');
         _context = _canvas.getContext('2d')!;
 
-        _canvas.width = 1024;
-        _canvas.height = 640;
+        _canvas.width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        _canvas.height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
         document.body.appendChild(_canvas);
     }
