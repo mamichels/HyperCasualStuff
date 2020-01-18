@@ -7,3 +7,6 @@ dist
 
 // IDE specific shit
 /.idea/
+
+// Exceptions
+!webpack.config.js
