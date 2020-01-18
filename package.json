@@ -20,5 +20,8 @@
   "homepage": "https://github.com/mamichels/HyperCasualStuff#readme",
   "devDependencies": {
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "tsyringe": "^4.0.1"
   }
 }
