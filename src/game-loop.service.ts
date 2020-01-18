@@ -1,37 +1,31 @@
 import {injectable} from "tsyringe";
+import { CanvasService } from "./canvas.service";
 
 @injectable()
 export class GameLoopService {
-    private canvas: HTMLCanvasElement | null = null;
-    private context: CanvasRenderingContext2D | null = null;
+
+    constructor(private readonly canvas: CanvasService){
+
+    }
 
     /**
      * initializes variables and starts game loop
      */
     public initLoop(): void {
-        this.canvas = document.querySelector('canvas');
-
-        if (this.canvas) {
-            this.context = this.canvas.getContext('2d');
-
-            requestAnimationFrame(this.draw.bind(this));
-        }
+        requestAnimationFrame(this.draw.bind(this));
     }
 
     /**
      * part of the game loop, draws frames
      */
     private draw(): void {
-        if(this.canvas && this.context){
-            // Clear the Canvas
-            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            // Sets background color of context
-            this.context.fillStyle = "red";
+        this.canvas.context.clearRect(0, 0, this.canvas.canvas.width, this.canvas.canvas.height);
+        // Sets background color of context
+        this.canvas.context.fillStyle = "red";
 
-            // Draw the background
-            this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        }
-
+        // Draw the background
+        this.canvas.context.fillRect(0, 0, this.canvas.canvas.width, this.canvas.canvas.height);
+        
         requestAnimationFrame(this.draw);
     }
 }
