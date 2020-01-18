@@ -2,17 +2,18 @@ import {injectable} from "tsyringe";
 
 @injectable()
 export class GameLoopService {
-    private canvas: HTMLCanvasElement | null = document.querySelector('canvas');
+    private canvas: HTMLCanvasElement | null = null;
     private context: CanvasRenderingContext2D | null = null;
 
     public initLoop(): void {
-        if(this.canvas)
-        {
-            this.context = this.canvas.getContext('2d');
+            this.canvas = document.querySelector('canvas');
+            if (this.canvas) {
+                this.context = this.canvas.getContext('2d');
 
-            requestAnimationFrame(this.draw);
+                requestAnimationFrame(this.draw.bind(this));
+            }
         }
-    }
+
 
     private draw(): void {
         if(this.canvas && this.context){
