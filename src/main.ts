@@ -13,6 +13,7 @@ export class Main {
     public run(): void {
         this.canvas.initCanvas();
         this.gameLoopService.initLoop();
+
         console.log("Game initialized!");
     }
 }

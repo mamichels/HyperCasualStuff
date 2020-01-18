@@ -16,6 +16,7 @@ export class CanvasService {
         if (_canvas) {
             return _canvas;
         }
+
         throw Error('Canvas has not yet been initialized.')
     }
 
@@ -26,6 +27,7 @@ export class CanvasService {
         if(_context) {
             return _context;
         }
+
         throw Error('Context has not yet been initialized.')
     }
 
