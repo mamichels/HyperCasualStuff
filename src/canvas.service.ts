@@ -15,6 +15,9 @@ export class CanvasService {
         this._canvas = document.createElement('canvas');
         this._context = this._canvas.getContext('2d');
 
+        this._canvas.width = 1024;
+        this._canvas.height = 640;
+
         document.body.appendChild(this._canvas);
     }
 
