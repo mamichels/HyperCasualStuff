@@ -2,12 +2,12 @@ import {injectable} from "tsyringe";
 
 @injectable()
 export class GameLoopService {
-    private canvas: HTMLCanvasElement;
-    private context: CanvasRenderingContext2D;
+    private canvas: HTMLCanvasElement | null = document.querySelector('canvas');
+    private context: CanvasRenderingContext2D | null = null;
 
     public initLoop(): void {
-        if(document.querySelector('canvas')){
-            this.canvas = document.querySelector('canvas');
+        if(this.canvas)
+        {
             this.context = this.canvas.getContext('2d');
 
             requestAnimationFrame(this.draw);
@@ -15,13 +15,15 @@ export class GameLoopService {
     }
 
     private draw(): void {
-        // Clear the Canvas
-        this.context.clearRect(0, 0, this.canvas?.width, this.canvas?.height);
-        // Sets background color of context
-        this.context.fillStyle = "red";
+        if(this.canvas && this.context){
+            // Clear the Canvas
+            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            // Sets background color of context
+            this.context.fillStyle = "red";
 
-        // Draw the background
-        this.context.fillRect(0, 0, this.canvas?.width, this.canvas?.height);
+            // Draw the background
+            this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        }
 
         requestAnimationFrame(this.draw);
     }
