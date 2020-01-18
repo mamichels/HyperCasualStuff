@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mamichels/HyperCasualStuff#readme",
   "devDependencies": {
+    "tslint": "^5.20.1",
     "typescript": "^3.7.5"
   },
   "dependencies": {
