@@ -1,0 +1,24 @@
+{
+  "name": "hypercasualstuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "compile": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamichels/HyperCasualStuff.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mamichels/HyperCasualStuff/issues"
+  },
+  "homepage": "https://github.com/mamichels/HyperCasualStuff#readme",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}

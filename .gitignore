@@ -1,0 +1,5 @@
+// Ignores dependencies
+node_modules
+
+// Ignores compiled files
+*.js
