@@ -13,8 +13,7 @@ export class GameLoopService {
                 requestAnimationFrame(this.draw.bind(this));
             }
         }
-
-
+        
     private draw(): void {
         if(this.canvas && this.context){
             // Clear the Canvas
