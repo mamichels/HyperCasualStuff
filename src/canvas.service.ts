@@ -12,10 +12,10 @@ export class CanvasService {
      * Initiates a canvas element and appends it to the DOM.
      */
     public initCanvas(): void {
-        this._canvas = new HTMLCanvasElement();
+        this._canvas = document.createElement('canvas');
         this._context = this._canvas.getContext('2d');
 
-        document.appendChild(this._canvas);
+        document.body.appendChild(this._canvas);
     }
 
     /**
@@ -25,6 +25,7 @@ export class CanvasService {
         if (this._canvas) {
             return this._canvas;
         }
+
         throw Error('Canvas has not yet been initialized.')
     }
 
@@ -32,10 +33,10 @@ export class CanvasService {
      * @return CanvasRenderingContext2D
      */
     get context(): CanvasRenderingContext2D {
-        if(this._context)
-        {
+        if(this._context) {
             return this._context;
         }
+
         throw Error('Context has not yet been initialized.')
     }
 }
