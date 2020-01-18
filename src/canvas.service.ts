@@ -43,6 +43,9 @@ export class CanvasService {
         _canvas = document.createElement('canvas');
         _context = _canvas.getContext('2d')!;
 
+        _canvas.width = 1024;
+        _canvas.height = 640;
+
         document.body.appendChild(_canvas);
     }
 }
