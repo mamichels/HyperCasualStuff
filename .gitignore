@@ -1,8 +1,12 @@
 // Ignores dependencies
 node_modules
+dist
 
 // Ignores compiled files
 *.js
 
 // IDE specific shit
 /.idea/
+
+// Exceptions
+!webpack.config.js
