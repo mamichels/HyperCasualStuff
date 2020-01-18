@@ -1,9 +1,10 @@
 import {injectable} from "tsyringe";
 
+let _canvas!: HTMLCanvasElement;
+let _context!: CanvasRenderingContext2D;
+
 @injectable()
 export class CanvasService {
-    private _canvas!: HTMLCanvasElement | null;
-    private _context!: CanvasRenderingContext2D | null;
 
     constructor() {
     }
@@ -12,10 +13,9 @@ export class CanvasService {
      * @return HTMLCanvasElement
      */
     get canvas(): HTMLCanvasElement {
-        if (this._canvas) {
-            return this._canvas;
+        if (_canvas) {
+            return _canvas;
         }
-
         throw Error('Canvas has not yet been initialized.')
     }
 
@@ -23,20 +23,26 @@ export class CanvasService {
      * @return CanvasRenderingContext2D
      */
     get context(): CanvasRenderingContext2D {
-        if(this._context) {
-            return this._context;
+        if(_context) {
+            return _context;
         }
-
         throw Error('Context has not yet been initialized.')
+    }
+
+    /**
+     * Clears the canvas.
+     */
+    public clear(): void {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); 
     }
 
     /**
      * Initiates a canvas element and appends it to the DOM.
      */
     public initCanvas(): void {
-        this._canvas = document.createElement('canvas');
-        this._context = this._canvas.getContext('2d');
+        _canvas = document.createElement('canvas');
+        _context = _canvas.getContext('2d')!;
 
-        document.body.appendChild(this._canvas)
+        document.body.appendChild(_canvas);
     }
 }
