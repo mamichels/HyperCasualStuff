@@ -3,4 +3,5 @@ import {container} from 'tsyringe';
 
 import {Main} from './src/main';
 
-container.resolve(Main).run();
+
+document.addEventListener('DOMContentLoaded', () => container.resolve(Main).run());
