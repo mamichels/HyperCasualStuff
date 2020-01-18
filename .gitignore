@@ -4,3 +4,5 @@ dist
 
 // Ignores compiled files
 *.js
+
+!webpack.config.js
