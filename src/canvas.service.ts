@@ -38,7 +38,7 @@ export class CanvasService {
      * Clears the canvas.
      */
     public clear(): void {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); 
+        //this.context.clearRect(1000, 100, this.canvas.width, this.canvas.height); 
     }
 
     /**
@@ -52,5 +52,13 @@ export class CanvasService {
         _canvas.height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
         document.body.appendChild(_canvas);
+    }
+
+
+    public setBackground(img: HTMLImageElement): void {
+        const heighRatio = this.canvas.height / img.height;
+        const widthRatio = this.canvas.width / img.width;
+        _context.drawImage(img, 0, 0, img.width, img.height,
+                                0, 0, img.width * widthRatio, img.height * heighRatio);
     }
 }

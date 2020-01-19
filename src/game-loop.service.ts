@@ -1,5 +1,6 @@
 import {injectable} from "tsyringe";
 import { CanvasService } from "./canvas.service";
+import { BackgroundManager } from "./background.manager";
 
 @injectable()
 export class GameLoopService {
@@ -9,7 +10,8 @@ export class GameLoopService {
      *
      * @param canvas
      */
-    constructor(private readonly canvas: CanvasService){
+    constructor(private readonly canvas: CanvasService,
+                private readonly backgroundManager: BackgroundManager){
     }
 
     /**
@@ -17,6 +19,7 @@ export class GameLoopService {
      */
     public initLoop(): void {
         this.draw();
+        this.backgroundManager.setBackground();
     }
 
     /**
@@ -25,9 +28,10 @@ export class GameLoopService {
     private draw(): void {
         this.canvas.clear();
 
+    
         // Draw the background
-        this.canvas.context.fillStyle = 'red';
-        this.canvas.context.fillRect(0, 0, this.canvas.canvas.width, this.canvas.canvas.height);
+        
+
         
         requestAnimationFrame(this.draw.bind(this));
     }
