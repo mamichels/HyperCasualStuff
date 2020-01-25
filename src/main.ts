@@ -12,10 +12,8 @@ export class Main {
      * @param gameLoopService
      * @param canvas
      */
-    constructor(
-        private readonly gameLoopService: GameLoopService,
-        private readonly canvas: CanvasService
-    ) {
+    constructor(private readonly gameLoopService: GameLoopService,
+        private readonly canvas: CanvasService) {
     }
 
     /**
@@ -24,7 +22,5 @@ export class Main {
     public run(): void {
         this.canvas.initCanvas();
         this.gameLoopService.initLoop();
-
-        console.log("Game initialized!");
     }
 }

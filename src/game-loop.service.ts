@@ -28,11 +28,13 @@ export class GameLoopService {
     private draw(): void {
         this.canvas.clear();
 
-    
         // Draw the background
-        
+        //this.canvas.setBackground();
 
-        
+        //Draw the tiles
+
+        //Draw the updated player
+
         requestAnimationFrame(this.draw.bind(this));
     }
 }
