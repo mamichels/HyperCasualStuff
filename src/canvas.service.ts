@@ -54,11 +54,16 @@ export class CanvasService {
         document.body.appendChild(_canvas);
     }
 
-
+    /**
+     * sets an image as a background element
+     *
+     * @param img
+     */
     public setBackground(img: HTMLImageElement): void {
-        const heighRatio = this.canvas.height / img.height;
+        const heightRatio = this.canvas.height / img.height;
         const widthRatio = this.canvas.width / img.width;
+
         _context.drawImage(img, 0, 0, img.width, img.height,
-                                0, 0, img.width * widthRatio, img.height * heighRatio);
+                                0, 0, img.width * widthRatio, img.height * heightRatio);
     }
 }
